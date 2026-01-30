@@ -18,6 +18,7 @@ final class StatusItemController: NSObject {
     private var isWakeEnabled = false
     private var isTimerActive = false
     private var formattedTime = ""
+    private var isOnACPower = true
     
     // MARK: - Initialization
     
@@ -72,6 +73,16 @@ final class StatusItemController: NSObject {
                 self?.updateStatusTitle()
             }
             .store(in: &cancellables)
+        
+        // Observe WakeManager.isOnACPower for power state changes
+        WakeManager.shared.$isOnACPower
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] isOnAC in
+                self?.isOnACPower = isOnAC
+                self?.updateStatusIcon()
+                self?.rebuildMenu()
+            }
+            .store(in: &cancellables)
     }
     
     private func setupTimerExpiredCallback() {
@@ -87,8 +98,18 @@ final class StatusItemController: NSObject {
     private func updateStatusIcon() {
         guard let button = statusItem?.button else { return }
         
-        // bolt.fill when active, moon.zzz.fill when inactive
-        let symbolName = isWakeEnabled ? "bolt.fill" : "moon.zzz.fill"
+        // Show different icons based on state:
+        // - battery.50 when on battery (wake unavailable)
+        // - bolt.fill when wake is active (plugged in)
+        // - moon.zzz.fill when wake is inactive (plugged in)
+        let symbolName: String
+        if !isOnACPower {
+            symbolName = "battery.50"
+        } else if isWakeEnabled {
+            symbolName = "bolt.fill"
+        } else {
+            symbolName = "moon.zzz.fill"
+        }
         button.image = NSImage(systemSymbolName: symbolName, accessibilityDescription: "Wake")
     }
     
@@ -113,6 +134,7 @@ final class StatusItemController: NSObject {
             isEnabled: isWakeEnabled,
             timeRemaining: formattedTime,
             isTimerActive: isTimerActive,
+            isOnACPower: isOnACPower,
             target: self
         )
     }

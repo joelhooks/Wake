@@ -11,12 +11,14 @@ enum MenuBuilder {
     ///   - isEnabled: Whether wake prevention is currently active
     ///   - timeRemaining: Formatted time remaining string (e.g., "1:30:00" or "∞")
     ///   - isTimerActive: Whether a timer is currently running
+    ///   - isOnACPower: Whether the Mac is plugged in
     ///   - target: The target for menu item actions
     /// - Returns: Configured NSMenu
     static func buildMenu(
         isEnabled: Bool,
         timeRemaining: String,
         isTimerActive: Bool,
+        isOnACPower: Bool,
         target: AnyObject
     ) -> NSMenu {
         let menu = NSMenu()
@@ -30,25 +32,41 @@ enum MenuBuilder {
         statusItem.isEnabled = false
         menu.addItem(statusItem)
         
+        // Power source indicator
+        let powerItem = NSMenuItem(
+            title: isOnACPower ? "Power: Plugged In" : "Power: Battery (Wake Disabled)",
+            action: nil,
+            keyEquivalent: ""
+        )
+        powerItem.isEnabled = false
+        powerItem.image = NSImage(
+            systemSymbolName: isOnACPower ? "powerplug.fill" : "battery.50",
+            accessibilityDescription: nil
+        )
+        menu.addItem(powerItem)
+        
         menu.addItem(NSMenuItem.separator())
         
-        // Toggle item
+        // Toggle item - disabled when on battery
         let toggleItem = NSMenuItem(
             title: isEnabled ? "Deactivate Wake" : "Activate Wake",
-            action: #selector(StatusItemController.toggleWake),
-            keyEquivalent: "w"
+            action: isOnACPower ? #selector(StatusItemController.toggleWake) : nil,
+            keyEquivalent: isOnACPower ? "w" : ""
         )
         toggleItem.target = target
         toggleItem.image = NSImage(
             systemSymbolName: isEnabled ? "moon.zzz" : "bolt",
             accessibilityDescription: nil
         )
+        if !isOnACPower {
+            toggleItem.isEnabled = false
+        }
         menu.addItem(toggleItem)
         
         menu.addItem(NSMenuItem.separator())
         
-        // Timer submenu
-        let timerSubmenu = buildTimerSubmenu(target: target)
+        // Timer submenu - disabled when on battery
+        let timerSubmenu = buildTimerSubmenu(target: target, isOnACPower: isOnACPower)
         let timerItem = NSMenuItem(
             title: "Set Timer",
             action: nil,
@@ -59,12 +77,15 @@ enum MenuBuilder {
             systemSymbolName: "timer",
             accessibilityDescription: nil
         )
+        if !isOnACPower {
+            timerItem.isEnabled = false
+        }
         menu.addItem(timerItem)
         
-        // Custom timer
+        // Custom timer - disabled when on battery
         let customTimerItem = NSMenuItem(
             title: "Custom Duration...",
-            action: #selector(StatusItemController.showCustomTimerDialog),
+            action: isOnACPower ? #selector(StatusItemController.showCustomTimerDialog) : nil,
             keyEquivalent: ""
         )
         customTimerItem.target = target
@@ -72,6 +93,9 @@ enum MenuBuilder {
             systemSymbolName: "clock.badge.questionmark",
             accessibilityDescription: nil
         )
+        if !isOnACPower {
+            customTimerItem.isEnabled = false
+        }
         menu.addItem(customTimerItem)
         
         // Stop timer (only show if timer is active)
@@ -119,13 +143,13 @@ enum MenuBuilder {
     // MARK: - Timer Submenu
     
     /// Builds the timer preset submenu with all WakeDuration cases.
-    private static func buildTimerSubmenu(target: AnyObject) -> NSMenu {
+    private static func buildTimerSubmenu(target: AnyObject, isOnACPower: Bool) -> NSMenu {
         let submenu = NSMenu()
         
         for duration in WakeDuration.allCases {
             let item = NSMenuItem(
                 title: duration.title,
-                action: #selector(StatusItemController.selectTimerDuration(_:)),
+                action: isOnACPower ? #selector(StatusItemController.selectTimerDuration(_:)) : nil,
                 keyEquivalent: ""
             )
             item.target = target
@@ -137,6 +161,10 @@ enum MenuBuilder {
                     systemSymbolName: "infinity",
                     accessibilityDescription: nil
                 )
+            }
+            
+            if !isOnACPower {
+                item.isEnabled = false
             }
             
             submenu.addItem(item)
