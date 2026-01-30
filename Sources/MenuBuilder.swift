@@ -122,8 +122,7 @@ enum MenuBuilder {
             keyEquivalent: ""
         )
         launchAtLoginItem.target = target
-        // TODO: Check actual launch at login state
-        launchAtLoginItem.state = .off
+        launchAtLoginItem.state = LaunchAtLogin.isEnabled ? .on : .off
         menu.addItem(launchAtLoginItem)
         
         menu.addItem(NSMenuItem.separator())

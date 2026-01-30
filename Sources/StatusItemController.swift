@@ -267,9 +267,8 @@ final class StatusItemController: NSObject {
     }
     
     @objc func toggleLaunchAtLogin() {
-        // TODO: Implement launch at login using SMAppService (macOS 13+)
-        // or LSSharedFileList for older macOS versions
-        print("[StatusItemController] Launch at Login toggle - not yet implemented")
+        LaunchAtLogin.toggle()
+        rebuildMenu()
     }
     
     @objc func quitApp() {
