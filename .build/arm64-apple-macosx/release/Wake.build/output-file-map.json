@@ -1,0 +1,42 @@
+{
+  "": {
+    "dependencies": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/Wake.d",
+    "object": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/Wake.o",
+    "swift-dependencies": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/master.swiftdeps"
+  },
+  "/Users/joel/Projects/Wake/Sources/AppDelegate.swift": {
+    "object": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/AppDelegate.swift.o",
+    "swiftmodule": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/AppDelegate~partial.swiftmodule",
+    "swift-dependencies": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/AppDelegate.swiftdeps"
+  },
+  "/Users/joel/Projects/Wake/Sources/LaunchAtLogin.swift": {
+    "object": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/LaunchAtLogin.swift.o",
+    "swiftmodule": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/LaunchAtLogin~partial.swiftmodule",
+    "swift-dependencies": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/LaunchAtLogin.swiftdeps"
+  },
+  "/Users/joel/Projects/Wake/Sources/MenuBuilder.swift": {
+    "object": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/MenuBuilder.swift.o",
+    "swiftmodule": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/MenuBuilder~partial.swiftmodule",
+    "swift-dependencies": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/MenuBuilder.swiftdeps"
+  },
+  "/Users/joel/Projects/Wake/Sources/StatusItemController.swift": {
+    "object": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/StatusItemController.swift.o",
+    "swiftmodule": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/StatusItemController~partial.swiftmodule",
+    "swift-dependencies": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/StatusItemController.swiftdeps"
+  },
+  "/Users/joel/Projects/Wake/Sources/TimerManager.swift": {
+    "object": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/TimerManager.swift.o",
+    "swiftmodule": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/TimerManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/TimerManager.swiftdeps"
+  },
+  "/Users/joel/Projects/Wake/Sources/WakeApp.swift": {
+    "object": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeApp.swift.o",
+    "swiftmodule": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeApp~partial.swiftmodule",
+    "swift-dependencies": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeApp.swiftdeps"
+  },
+  "/Users/joel/Projects/Wake/Sources/WakeManager.swift": {
+    "object": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeManager.swift.o",
+    "swiftmodule": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeManager.swiftdeps"
+  }
+}

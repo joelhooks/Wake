@@ -1,0 +1,315 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.Wake-arm64-apple-macosx15.0-release.module" : {
+      "executable" : "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "fileList" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/sources",
+      "importPath" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/Sources/AppDelegate.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/Sources/LaunchAtLogin.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/Sources/MenuBuilder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/Sources/StatusItemController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/Sources/TimerManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/Sources/WakeApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/Sources/WakeManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/swift-version--1AB21518FC5DEDBE.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "Wake",
+      "moduleOutputPath" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Modules/Wake.swiftmodule",
+      "objects" : [
+        "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/AppDelegate.swift.o",
+        "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/LaunchAtLogin.swift.o",
+        "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/MenuBuilder.swift.o",
+        "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/StatusItemController.swift.o",
+        "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/TimerManager.swift.o",
+        "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeApp.swift.o",
+        "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeManager.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-O",
+        "-j11",
+        "-DSWIFT_PACKAGE",
+        "-module-cache-path",
+        "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "Wake_main",
+        "-color-diagnostics",
+        "-swift-version",
+        "5",
+        "-F",
+        "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+        "-sdk",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "wake"
+      ],
+      "outputFileMapPath" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/AppDelegate.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/LaunchAtLogin.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/MenuBuilder.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/StatusItemController.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/TimerManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Modules/Wake.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/joel/Projects/Wake/Sources/AppDelegate.swift",
+        "/Users/joel/Projects/Wake/Sources/LaunchAtLogin.swift",
+        "/Users/joel/Projects/Wake/Sources/MenuBuilder.swift",
+        "/Users/joel/Projects/Wake/Sources/StatusItemController.swift",
+        "/Users/joel/Projects/Wake/Sources/TimerManager.swift",
+        "/Users/joel/Projects/Wake/Sources/WakeApp.swift",
+        "/Users/joel/Projects/Wake/Sources/WakeManager.swift"
+      ],
+      "tempsPath" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build",
+      "wholeModuleOptimization" : true
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "Wake" : [
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc",
+      "-module-name",
+      "Wake",
+      "-package-name",
+      "wake",
+      "-whole-module-optimization",
+      "-num-threads",
+      "11",
+      "-c",
+      "/Users/joel/Projects/Wake/Sources/AppDelegate.swift",
+      "/Users/joel/Projects/Wake/Sources/LaunchAtLogin.swift",
+      "/Users/joel/Projects/Wake/Sources/MenuBuilder.swift",
+      "/Users/joel/Projects/Wake/Sources/StatusItemController.swift",
+      "/Users/joel/Projects/Wake/Sources/TimerManager.swift",
+      "/Users/joel/Projects/Wake/Sources/WakeApp.swift",
+      "/Users/joel/Projects/Wake/Sources/WakeManager.swift",
+      "-I",
+      "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-O",
+      "-j11",
+      "-DSWIFT_PACKAGE",
+      "-module-cache-path",
+      "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "Wake_main",
+      "-color-diagnostics",
+      "-swift-version",
+      "5",
+      "-F",
+      "/Library/Developer/CommandLineTools/Library/Developer/Frameworks",
+      "-sdk",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "wake",
+      "-driver-use-frontend-path",
+      "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "Wake" : [
+
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "writeCommands" : {
+    "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/Sources/AppDelegate.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/Sources/LaunchAtLogin.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/Sources/MenuBuilder.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/Sources/StatusItemController.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/Sources/TimerManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/Sources/WakeApp.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/Sources/WakeManager.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/sources"
+    },
+    "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/AppDelegate.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/LaunchAtLogin.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/MenuBuilder.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/StatusItemController.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/TimerManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeApp.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeManager.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.product/Objects.LinkFileList"
+    },
+    "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/swift-version--1AB21518FC5DEDBE.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Library/Developer/CommandLineTools/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/swift-version--1AB21518FC5DEDBE.txt"
+    }
+  }
+}

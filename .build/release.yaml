@@ -1,0 +1,66 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "PackageStructure": ["<PackageStructure>"]
+  "Wake-arm64-apple-macosx15.0-release.exe": ["<Wake-arm64-apple-macosx15.0-release.exe>"]
+  "Wake-arm64-apple-macosx15.0-release.module": ["<Wake-arm64-apple-macosx15.0-release.module>"]
+  "main": ["<Wake-arm64-apple-macosx15.0-release.exe>","<Wake-arm64-apple-macosx15.0-release.module>"]
+  "test": ["<Wake-arm64-apple-macosx15.0-release.exe>","<Wake-arm64-apple-macosx15.0-release.module>"]
+default: "main"
+nodes:
+  "/Users/joel/Projects/Wake/Sources/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/joel/Projects/Wake/Sources/AppDelegate.swift","/Users/joel/Projects/Wake/Sources/LaunchAtLogin.swift","/Users/joel/Projects/Wake/Sources/MenuBuilder.swift","/Users/joel/Projects/Wake/Sources/StatusItemController.swift","/Users/joel/Projects/Wake/Sources/TimerManager.swift","/Users/joel/Projects/Wake/Sources/WakeApp.swift","/Users/joel/Projects/Wake/Sources/WakeManager.swift"]
+    outputs: ["/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/sources"]
+    description: "Write auxiliary file /Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/sources"
+
+  "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/AppDelegate.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/LaunchAtLogin.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/MenuBuilder.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/StatusItemController.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/TimerManager.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeApp.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeManager.swift.o"]
+    outputs: ["/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.product/Objects.LinkFileList"
+
+  "/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/swift-version--1AB21518FC5DEDBE.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Library/Developer/CommandLineTools/usr/bin/swiftc"]
+    outputs: ["/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/swift-version--1AB21518FC5DEDBE.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/swift-version--1AB21518FC5DEDBE.txt"
+
+  "<Wake-arm64-apple-macosx15.0-release.exe>":
+    tool: phony
+    inputs: ["/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake"]
+    outputs: ["<Wake-arm64-apple-macosx15.0-release.exe>"]
+
+  "<Wake-arm64-apple-macosx15.0-release.module>":
+    tool: phony
+    inputs: ["/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/AppDelegate.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/LaunchAtLogin.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/MenuBuilder.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/StatusItemController.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/TimerManager.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeApp.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeManager.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Modules/Wake.swiftmodule"]
+    outputs: ["<Wake-arm64-apple-macosx15.0-release.module>"]
+
+  "C.Wake-arm64-apple-macosx15.0-release.exe":
+    tool: shell
+    inputs: ["/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/AppDelegate.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/LaunchAtLogin.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/MenuBuilder.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/StatusItemController.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/TimerManager.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeApp.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeManager.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.product/Objects.LinkFileList"]
+    outputs: ["/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake"]
+    description: "Linking ./.build/arm64-apple-macosx/release/Wake"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-L","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release","-o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake","-module-name","Wake","-Xlinker","-no_warn_duplicate_libraries","-emit-executable","-Xlinker","-dead_strip","-Xlinker","-alias","-Xlinker","_Wake_main","-Xlinker","_main","-Xlinker","-rpath","-Xlinker","@loader_path","@/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.product/Objects.LinkFileList","-target","arm64-apple-macosx13.0","-F","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xlinker","-rpath","-Xlinker","/Library/Developer/CommandLineTools/Library/Developer/Frameworks"]
+
+  "C.Wake-arm64-apple-macosx15.0-release.module":
+    tool: shell
+    inputs: ["/Users/joel/Projects/Wake/Sources/AppDelegate.swift","/Users/joel/Projects/Wake/Sources/LaunchAtLogin.swift","/Users/joel/Projects/Wake/Sources/MenuBuilder.swift","/Users/joel/Projects/Wake/Sources/StatusItemController.swift","/Users/joel/Projects/Wake/Sources/TimerManager.swift","/Users/joel/Projects/Wake/Sources/WakeApp.swift","/Users/joel/Projects/Wake/Sources/WakeManager.swift","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/swift-version--1AB21518FC5DEDBE.txt","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/sources"]
+    outputs: ["/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/AppDelegate.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/LaunchAtLogin.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/MenuBuilder.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/StatusItemController.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/TimerManager.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeApp.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/WakeManager.swift.o","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Modules/Wake.swiftmodule"]
+    description: "Compiling Swift Module 'Wake' (7 sources)"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-module-name","Wake","-emit-dependencies","-emit-module","-emit-module-path","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Modules/Wake.swiftmodule","-output-file-map","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/output-file-map.json","-whole-module-optimization","-num-threads","11","-c","@/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Wake.build/sources","-I","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/Modules","-target","arm64-apple-macosx13.0","-O","-j11","-DSWIFT_PACKAGE","-module-cache-path","/Users/joel/Projects/Wake/.build/arm64-apple-macosx/release/ModuleCache","-parseable-output","-Xfrontend","-entry-point-function-name","-Xfrontend","Wake_main","-color-diagnostics","-swift-version","5","-F","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xcc","-isysroot","-Xcc","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-Xcc","-fPIC","-Xcc","-g","-package-name","wake"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/joel/Projects/Wake/Sources/","/Users/joel/Projects/Wake/Package.swift","/Users/joel/Projects/Wake/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
